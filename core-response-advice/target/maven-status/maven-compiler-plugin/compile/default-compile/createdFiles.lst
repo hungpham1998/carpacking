@@ -1,0 +1,8 @@
+com\carparking\core_response_advice\config\WrappedResponseBodyAdvice.class
+com\carparking\core_response_advice\config\EnableWrappedResponse.class
+com\carparking\core_response_advice\model\WrappedListResponse.class
+com\carparking\core_response_advice\model\Meta.class
+com\carparking\core_response_advice\model\ResponseObject.class
+com\carparking\core_response_advice\model\SaveUpdateBaseResponse.class
+com\carparking\core_response_advice\model\WrappedResponse.class
+com\carparking\core_response_advice\model\ResponseObjectType.class

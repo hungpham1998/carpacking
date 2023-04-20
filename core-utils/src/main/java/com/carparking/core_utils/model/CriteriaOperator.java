@@ -1,0 +1,26 @@
+package com.htsc.core_utils.model;
+
+public enum CriteriaOperator {
+  EQUAL,
+  EQUAL_IGNORE_CASE,
+  NOT_EQUAL,
+  IS,
+  IS_NOT,
+  IS_NULL,
+  IS_NOT_NULL,
+  IS_EMPTY,
+  IS_NOT_EMPTY,
+  LIKE,
+  LIKE_IGNORE_CASE,
+  GREATER_THAN,
+  GREATER_THAN_OR_EQUAL,
+  LESS_THAN,
+  LESS_THAN_OR_EQUAL,
+  BETWEEN,
+  IN,
+  NOT_IN,
+  AND_MULTIPLES,
+  OR_MULTIPLES,
+  NOR_MULTIPLES,
+  ELEM_MATCH
+}

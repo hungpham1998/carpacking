@@ -1,0 +1,15 @@
+com\carparking\core_auth\model\Role.class
+com\carparking\core_auth\jwt\JwtAuthenticationFilter.class
+com\carparking\core_auth\model\User.class
+com\carparking\core_auth\service\UserService.class
+com\carparking\core_auth\handler\CustomAccessDeniedHandler.class
+com\carparking\core_auth\jwt\JwtTokenProvider.class
+com\carparking\core_auth\handler\CustomAuthenticationFailureHandler.class
+com\carparking\core_auth\config\SecurityConfig.class
+com\carparking\core_auth\config\SimpleCORSFilter.class
+com\carparking\core_auth\config\EnableCoreAuth.class
+com\carparking\core_auth\jwt\JwtAuthenticationEntryPoint.class
+com\carparking\core_auth\model\UserPrincipal.class
+com\carparking\core_auth\service\CustomUserDetailsService.class
+com\carparking\core_auth\exception\UnauthorizedException.class
+com\carparking\core_auth\util\SecurityService.class
