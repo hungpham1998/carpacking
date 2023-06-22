@@ -1,4 +1,4 @@
-package com.htsc.core_utils.definition;
+package com.carparking.core_utils.definition;
 
 public class AppPattern {
   public static final String Password = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&]).{8,20}$";

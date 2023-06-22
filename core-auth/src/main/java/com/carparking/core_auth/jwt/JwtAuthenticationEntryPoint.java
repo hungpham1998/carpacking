@@ -1,7 +1,12 @@
 package com.carparking.core_auth.jwt;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.RequiredArgsConstructor;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -9,12 +14,8 @@ import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-@RequiredArgsConstructor
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
 	private static final Logger logger = LoggerFactory.getLogger(JwtAuthenticationEntryPoint.class);
 	private final ObjectMapper objectMapper = new ObjectMapper();
@@ -26,7 +27,8 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
 			AuthenticationException authException
 	) throws IOException {
 		logger.error(
-				"Responding with unauthorized error. Message - {}",
+				"Responding with unauthorized error. url: {}, message: {}",
+				httpServletRequest.getRequestURL(),
 				authException.getMessage()
 		);
 

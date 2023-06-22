@@ -1,4 +1,4 @@
-package com.htsc.core_utils.annotation;
+package com.carparking.core_utils.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

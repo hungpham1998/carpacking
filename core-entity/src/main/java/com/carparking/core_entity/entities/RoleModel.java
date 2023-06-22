@@ -21,8 +21,6 @@ public class RoleModel implements Role {
 	/**
 	 * @return
 	 */
-	@Override
-	public String getRoleCode() {
-		return null;
-	}
+	@Column(name = "RoleCode")
+	private String roleCode;
 }

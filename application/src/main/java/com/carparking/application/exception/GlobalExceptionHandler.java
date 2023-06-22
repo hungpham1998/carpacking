@@ -57,7 +57,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler
 
 	@ExceptionHandler(AuthenticationServiceException.class)
 	public ResponseEntity<?> AuthenticationException(AuthenticationServiceException ex, WebRequest request) {
-		LOGGER.error("Error Occurred.", ex.getMessage());
+		LOGGER.error("Error Occurred.", ex);
 		ErrorDetails errorDetails = new ErrorDetails("Bạn không có quyền truy cập!", HttpStatus.UNAUTHORIZED);
 		return new ResponseEntity<>(errorDetails, HttpStatus.UNAUTHORIZED);
 	};

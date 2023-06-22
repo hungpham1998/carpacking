@@ -1,6 +1,6 @@
 package com.carparking.core_auth.jwt;
 
-
+import com.carparking.core_auth.exception.UnauthorizedException;
 import com.carparking.core_auth.model.UserPrincipal;
 import com.carparking.core_auth.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +9,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
-import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -18,59 +17,56 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+import java.util.Objects;
 @Slf4j
-@Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
+  @Autowired
+  JwtTokenProvider tokenProvider;
 
-	private	JwtTokenProvider tokenProvider;
+//  @Autowired
+  UserService userService;
 
-	private  UserService userService;
+  @Override
+  protected void doFilterInternal(
+          HttpServletRequest request,
+          HttpServletResponse response,
+          FilterChain filterChain
+  ) throws ServletException, IOException {
+    try {
+      // Lấy jwt từ request
+      String jwt = getJwtFromRequest(request);
 
-	public JwtAuthenticationFilter() {
-	}
+      if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {
+        String userId = tokenProvider.getUserIdFromJWT(jwt);
 
-	@Override
-	protected void doFilterInternal(
-			HttpServletRequest request,
-			HttpServletResponse response,
-			FilterChain filterChain
-	) throws ServletException, IOException {
-		try {
-			// Lấy jwt từ request
-			String jwt = getJwtFromRequest(request);
+        UserDetails account = UserPrincipal.create(
+                userService.findById(Long.valueOf(userId))
+        );
+        UsernamePasswordAuthenticationToken authentication =
+                new UsernamePasswordAuthenticationToken(
+                        account,
+                        null,
+                        account.getAuthorities()
+                );
 
-			if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {
-				String userId = tokenProvider.getUserIdFromJWT(jwt);
+        authentication.setDetails(
+                new WebAuthenticationDetailsSource().buildDetails(request)
+        );
 
-				UserDetails account = UserPrincipal.create(
-						userService.findById(userId, true)
-				);
-				UsernamePasswordAuthenticationToken authentication =
-						new UsernamePasswordAuthenticationToken(
-								account,
-								null,
-								account.getAuthorities()
-						);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+      }
+    } catch (Exception ex) {
+      log.error("(doFilterInternal)ex: {}", ex);
+    }
 
-				authentication.setDetails(
-						new WebAuthenticationDetailsSource().buildDetails(request)
-				);
+    filterChain.doFilter(request, response);
+  }
 
-				SecurityContextHolder.getContext().setAuthentication(authentication);
-			}
-		} catch (Exception ex) {
-			log.error("(doFilterInternal)ex: {}", ex);
-		}
-
-		filterChain.doFilter(request, response);
-	}
-
-	private String getJwtFromRequest(HttpServletRequest request) {
-		String bearerToken = request.getHeader("Authorization");
-		if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
-			return bearerToken.substring(7);
-		}
-		return null;
-	}
+  private String getJwtFromRequest(HttpServletRequest request) {
+    String bearerToken = request.getHeader("Authorization");
+    if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
+      return bearerToken.substring(7);
+    }
+    return null;
+  }
 }

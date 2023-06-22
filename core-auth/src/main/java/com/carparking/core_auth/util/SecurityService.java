@@ -1,16 +1,14 @@
 package com.carparking.core_auth.util;
 
+
 import com.carparking.core_auth.jwt.JwtTokenProvider;
 import com.carparking.core_auth.model.UserPrincipal;
-import com.carparking.core_auth.service.CustomUserDetailsService;
-import io.jsonwebtoken.JwtException;
-import io.jsonwebtoken.Jwts;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
+import com.carparking.core_auth.service.CustomUserDetailsService;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Map;
@@ -20,11 +18,11 @@ import java.util.stream.Collectors;
 
 @Slf4j
 public class SecurityService {
-  @Autowired
-  CustomUserDetailsService customUserDetailsService;
+
+//  @Autowired
+  private CustomUserDetailsService customUserDetailsService;
 
   private JwtTokenProvider jwtProvider;
-
   public static Long getUserId() {
     return getPrincipal().getId();
   }
@@ -33,10 +31,10 @@ public class SecurityService {
     return getPrincipal().getUsername();
   }
 
-  public static Object getAdditionalData(String key) {
-    Map<String, Object> data = getPrincipal().getAdditionalData();
-    return Objects.nonNull(data) ? data.getOrDefault(key, null) : null;
-  }
+//  public static Object getAdditionalData(String key) {
+////    Map<String, Object> data = getPrincipal().getAdditionalData();
+//    return Objects.nonNull(data) ? data.getOrDefault(key, null) : null;
+//  }
 
   public static Set<String> getUserRoles() {
     return getPrincipal().getAuthorities()
@@ -56,8 +54,9 @@ public class SecurityService {
         (UserPrincipal) SecurityContextHolder.getContext()
             .getAuthentication().getPrincipal();
   }
+
   public Authentication getAuthentication(String token) {
-    UserDetails userDetails = customUserDetailsService.loadUserByUsername(jwtProvider.getUsernameFromToken(token));
+    UserDetails userDetails = customUserDetailsService.loadUserByUsername(jwtProvider.getUserIdFromJWT(token));
     return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
   }
 

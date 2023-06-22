@@ -1,9 +1,7 @@
 package com.carparking.core_entity.entities;
 
 import com.carparking.core_auth.model.User;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -41,15 +39,15 @@ public class Account implements User {
 	@JoinTable(name = "account_roles", joinColumns = @JoinColumn(name = "account_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private List<RoleModel> roles;
 
-
-
+	@Column(name = "isDelete")
+	private Boolean isDelete;
 	@Override
 	public boolean isDelete() {
 		return false;
 	}
 
-	@Override
-	public Map<String, Object> getAdditionalData() {
-		return null;
-	}
+//	@Override
+//	public Map<String, Object> getAdditionalData() {
+//		return null;
+//	}
 }

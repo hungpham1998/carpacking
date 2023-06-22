@@ -1,4 +1,4 @@
-package com.htsc.core_utils.utils;
+package com.carparking.core_utils.utils;
 
 import java.beans.PropertyEditor;
 import java.beans.PropertyEditorManager;

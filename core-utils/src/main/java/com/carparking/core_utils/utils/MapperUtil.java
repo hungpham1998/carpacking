@@ -1,4 +1,4 @@
-package com.htsc.core_utils.utils;
+package com.carparking.core_utils.utils;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -10,7 +10,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.htsc.core_utils.annotation.DontUpdate;
+import com.carparking.core_utils.annotation.DontUpdate;
 
 //import com.fasterxml.jackson.core.type.TypeReference;
 //import com.fasterxml.jackson.databind.ObjectMapper;

@@ -33,4 +33,8 @@ public interface AccountRepository extends IBaseDocumentRepository<Account> {
 	@Query(value = "select * from account where :keyword is null OR username LIKE %:keyword% "
 			+ " OR email LIKE %:keyword% OR fullname LIKE %:keyword% ", nativeQuery = true)
 	Page<Account> getPageSizeAndKeyword(String keyword, Pageable page);
+
+	@Query(value = "SELECT * FROM account WHERE is_delete IS NOT true AND username = :username", nativeQuery = true)
+	Account findByUsernameToLogin(String username);
+
 }

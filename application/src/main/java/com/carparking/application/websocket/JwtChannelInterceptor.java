@@ -17,11 +17,10 @@ import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 @Component
-public class JwtChannelInterceptor extends ChannelInterceptorAdapter {
+public class  JwtChannelInterceptor extends ChannelInterceptorAdapter {
 
   private final Map<String, Set<String>> userSessionsMap = new ConcurrentHashMap<>();
   private final Map<String, WebSocketSession> webSocketSessionMap = new ConcurrentHashMap<>();
-  @Autowired
   private JwtTokenProvider jwtTokenProvider;
 
   @Override

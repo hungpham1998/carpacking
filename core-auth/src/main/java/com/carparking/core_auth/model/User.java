@@ -9,5 +9,5 @@ public interface User {
   String getPassword();
   boolean isDelete();
   List<? extends Role> getRoles();
-  Map<String, Object> getAdditionalData();
+//  Map<String, Object> getAdditionalData();
 }

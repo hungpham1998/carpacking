@@ -1,6 +1,6 @@
 package com.carparking.core_entity.entities;
 
-import com.htsc.core_utils.annotation.DontUpdate;
+import com.carparking.core_utils.annotation.DontUpdate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

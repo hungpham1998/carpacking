@@ -1,4 +1,4 @@
-package com.htsc.core_utils.validation;
+package com.carparking.core_utils.validation;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

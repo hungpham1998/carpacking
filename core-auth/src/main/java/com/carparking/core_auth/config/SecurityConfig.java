@@ -90,7 +90,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.authorizeRequests()
 				.antMatchers("/uploads/**").permitAll()
 				.antMatchers("/api/auth/**").permitAll()
+				// INTERNAL API
+				.antMatchers("/api/timekeeping/internal/**").permitAll()
 				.antMatchers("/ws/**").permitAll()
+				// SWAGGER
+				.antMatchers(
+						"/swagger-ui.html",
+						"/webjars/**",
+						"/swagger-resources/**",
+						"/v2/api-docs/**",
+						"/favicon.ico"
+				).permitAll()
 				.anyRequest().authenticated()
 				.and()
 				.exceptionHandling().accessDeniedHandler(accessDeniedHandler());
@@ -99,7 +109,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				jwtAuthenticationFilter(),
 				UsernamePasswordAuthenticationFilter.class
 		);
-	};
+	}
 
 	@Override
 	public void configure(WebSecurity web) {

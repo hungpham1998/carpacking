@@ -1,20 +1,47 @@
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\VehicleTypeModel.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\repository\BaseEntityRepository.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\service\BaseEntityServiceImpl.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\config\AuditorAwareImpl.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\SubscriberModel.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\BaseCategoryEntity.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\repository\BaseCategoryRepository.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\service\BaseCategoryServiceImpl.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\config\AuditConfiguration.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\VehicleCategoryModel.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\Account.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\BaseEntity.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\TicketTypeModel.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\RoleModel.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\config\EnableAudit.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\BaseEntityWithUpdater.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\TicketModel.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\repository\IBaseDocumentRepository.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\LanesModel.java
-E:\car\carpacking\core-entity\src\main\java\com\carparking\core_entity\service\BaseService.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\CampaignLogActionTypeE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\ShapeE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\config\EnableMetadataExtractor.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\VehicleCategoryModel.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\config\AuditConfiguration.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\CommandResultE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\DeviceTransferStatusE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\service\BaseService.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\SortDirectionE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\BaseDocumentWithAudit.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\config\MetadataExtractorConfiguration.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\CriteriaOperatorE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\service\IUpdateObjectCallback.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\DeviceInCampaignStatusE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\Account.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\repository\IBaseDocumentRepository.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\RoleE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\NotificationTopicE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\VehicleTypeModel.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\DeviceStatusE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\BaseEntity.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\metadata\IntegratorPropertyCustomizer.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\config\EnableAudit.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\BaseEntityWithUpdater.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\MasterDataTypeE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\service\BaseEntityServiceImpl.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\repository\BaseEntityRepository.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\config\AuditorAwareImpl.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\CampaignLogDataTypeE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\SubscriberModel.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\CommonStatusE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\SortCriteria.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\service\BaseCategoryServiceImpl.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\LanesModel.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\RoleModel.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\TemplateCode.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\CampaignStatusE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\metadata\MetadataExtractorIntegrator.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\BaseCategoryEntity.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\DeviceOpEventE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\TicketTypeModel.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\AppDefinition.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\repository\BaseCategoryRepository.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\definition\NotificationMethodE.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\BaseDocument.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\TicketModel.java
+D:\clone code\carpacking\carpacking\core-entity\src\main\java\com\carparking\core_entity\entities\PagingCondition.java

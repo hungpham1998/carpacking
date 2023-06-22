@@ -1,4 +1,4 @@
-package com.htsc.core_utils.model;
+package com.carparking.core_utils.model;
 
 import java.util.ArrayList;
 import java.util.List;

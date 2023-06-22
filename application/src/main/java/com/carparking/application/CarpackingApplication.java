@@ -20,9 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.carparking")
 @EntityScan("com.carparking.*")
-@ComponentScan("com.carparking.*")
 public class CarpackingApplication extends SpringBootServletInitializer {
     @Autowired
     RoleRepository roleRepository;
@@ -62,6 +61,7 @@ public class CarpackingApplication extends SpringBootServletInitializer {
                 roles.add(adminRoleData);
                 adminAccount = new Account();
                 adminAccount.setUsername("admin");
+                adminAccount.setIsDelete(true);
                 adminAccount.setPassword(bCryptPasswordEncoder.encode("123456"));
                 adminAccount.setFullName("Quản trị viên");
                 adminAccount.setEmail("admin@gmail.com");

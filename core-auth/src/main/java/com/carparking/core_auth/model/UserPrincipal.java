@@ -1,15 +1,15 @@
 
 package com.carparking.core_auth.model;
 
-import lombok.EqualsAndHashCode;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+
+import lombok.EqualsAndHashCode;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class UserPrincipal implements UserDetails {
@@ -23,7 +23,7 @@ public class UserPrincipal implements UserDetails {
 
 	private final boolean active;
 
-	private final Map<String, Object> additionalData;
+//	private final Map<String, Object> additionalData;
 
 	private final Collection<? extends GrantedAuthority> authorities;
 
@@ -32,13 +32,13 @@ public class UserPrincipal implements UserDetails {
 			String username,
 			String password,
 			boolean activate,
-			Map<String, Object> additionalData,
+//			Map<String, Object> additionalData,
 			Collection<? extends GrantedAuthority> authorities) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		this.active = !activate;
-		this.additionalData = additionalData;
+		this.active = activate;
+//		this.additionalData = additionalData;
 		this.authorities = authorities;
 	}
 
@@ -55,8 +55,8 @@ public class UserPrincipal implements UserDetails {
 				user.getId(),
 				user.getUsername(),
 				user.getPassword(),
-				user.isDelete(),
-				user.getAdditionalData(),
+				!user.isDelete(),
+//				user.getAdditionalData(),
 				authorities
 		);
 	}
@@ -100,7 +100,7 @@ public class UserPrincipal implements UserDetails {
 		return active;
 	}
 
-	public Map<String, Object> getAdditionalData() {
-		return additionalData;
-	}
+//	public Map<String, Object> getAdditionalData() {
+//		return additionalData;
+//	}
 }

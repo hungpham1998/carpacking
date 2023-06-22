@@ -9,6 +9,7 @@ import com.carparking.application.request.AccountRequest;
 import com.carparking.application.response.ResponseObjectType;
 import com.carparking.application.ultis.PageSizeObjectType;
 import com.carparking.application.ultis.SortPageSize;
+import com.carparking.core_auth.model.User;
 import com.carparking.core_entity.entities.Account;
 import com.carparking.core_entity.entities.RoleModel;
 import org.springframework.beans.BeanUtils;
@@ -19,14 +20,15 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.Normalizer;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import com.carparking.core_auth.service.UserService;
+
+import javax.persistence.EntityNotFoundException;
 
 @Service
-public class AccountService {
+public class AccountService implements UserService {
     @Autowired
     private  final AccountRepository accountRepository;
 
@@ -129,6 +131,7 @@ public class AccountService {
     }
 
 
+    @Override
     public Account findById(Long id) {
         Optional<Account> accountOptional = accountRepository.findById(id);
         if (!accountOptional.isPresent()) {
@@ -144,4 +147,20 @@ public class AccountService {
         return (res.replaceAll("\\s", "")).replaceAll("đ", "d");
     }
 
+    @Override
+    public Account findByUsernameToLogin(String username) {
+        Account account = accountRepository.findByUsernameToLogin(username);
+        if (Objects.isNull(account)) return null;
+
+        return account;
+    }
+
+    @Override
+    public Account findById(Long id, boolean withAdditionalData) {
+        Account account = accountRepository.findById(id)
+                .orElseThrow(
+                        () -> new EntityNotFoundException("Không tìm thấy id của tài khoản!")
+                );
+        return account;
+    }
 }

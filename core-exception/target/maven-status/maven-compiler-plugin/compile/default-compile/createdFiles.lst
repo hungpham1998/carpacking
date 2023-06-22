@@ -1,10 +1,11 @@
 com\carparking\core_exception\config\I18nConfiguration.class
 com\carparking\core_exception\config\CustomLocalResolver$1.class
-com\carparking\core_exception\exception\RunException.class
 com\carparking\core_exception\exception\PermissionException.class
 com\carparking\core_exception\config\CustomLocalResolver.class
 com\carparking\core_exception\exception\BaseExceptionHandler.class
 com\carparking\core_exception\exception\ConflictException.class
 com\carparking\core_exception\exception\NotFoundException.class
+com\carparking\core_exception\exception\RunException.class
 com\carparking\core_exception\exception\BadRequestException.class
+com\carparking\core_exception\exception\NotSupportedException.class
 com\carparking\core_exception\exception\UnauthorizedException.class

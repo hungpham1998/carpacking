@@ -1,4 +1,4 @@
-package com.htsc.core_utils.utils;
+package com.carparking.core_utils.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
