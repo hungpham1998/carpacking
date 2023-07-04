@@ -74,7 +74,7 @@ public class InitialAuthenticationFilter extends OncePerRequestFilter {
       Map<String, Object> error = new HashMap<>();
       log.info("(doFilterInternal) locale: {}", LocaleContextHolder.getLocale());
       error.put("message", messageSource.getMessage(
-          "com.htsc.message.InvalidLogin", null,
+          "com.carparking.message.InvalidLogin", null,
           LocaleContextHolder.getLocale()));
       error.put("status", 401);
 
